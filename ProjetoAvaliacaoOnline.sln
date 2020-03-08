@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoConsole", "Avaliac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaliacaoTests", "AvaliacaoTests\AvaliacaoTests.csproj", "{687EFC9D-5972-45DD-8D67-FC331C8376C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptsBanco", "ScriptsBanco", "{E50CFDDA-47F2-4941-A4E3-E875B46753EB}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Projetos\AvaliacaoReserve\SQLQueryCriarBanco.sql = ..\..\Projetos\AvaliacaoReserve\SQLQueryCriarBanco.sql
+		..\..\Projetos\AvaliacaoReserve\SQLQueryInserindoDados.sql = ..\..\Projetos\AvaliacaoReserve\SQLQueryInserindoDados.sql
+		..\..\Projetos\AvaliacaoReserve\SQLQuerySP.sql = ..\..\Projetos\AvaliacaoReserve\SQLQuerySP.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
