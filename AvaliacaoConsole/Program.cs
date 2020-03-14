@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace AvaliacaoConsole
 {
@@ -7,6 +8,44 @@ namespace AvaliacaoConsole
     {
         static void Main(string[] args)
         {
+
+           
+                // 1. Instancia a conexão(objeto SqlConnection)
+                SqlConnection conn = new SqlConnection("Data Source=.\\SQLNOVO;Initial Catalog=AvaliaçãoReserveSystem;Integrated Security=SSPI");
+                //
+                // define um SqlDataReader nulo
+                SqlDataReader dr = null;
+                try
+                {
+                    // 2. Abre a conexão
+                    conn.Open();
+                    // 3. Passa conexão para o objeto command
+                    SqlCommand cmd = new SqlCommand("select * from prova", conn);
+                    //
+                    // 4. Usa conexão
+                    // obtêm o resultado da consulta
+                    dr = cmd.ExecuteReader();
+                    // imprime o codigo do cliente para cada registro
+                    while (dr.Read())
+                    {
+                        Console.WriteLine(dr[0]);
+                    }
+                }
+                finally
+                {
+                    // fecha o reader
+                    if (dr != null)
+                    {
+                        dr.Close();
+                    }
+                    // 5. Fecha a conexão
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                }
+            
+
             //1º criando uma prova
             var prova = new Prova(1, "Prova Dev Junior");
 
