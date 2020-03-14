@@ -37,5 +37,19 @@ namespace Avaliacao.Infra.Tests
 
 
         }
+
+        [Fact(DisplayName = "Buscar Prova por ID")]
+        public void BuscarPorId_DeveEncontrar()
+        {
+            // Arrange
+            var pd = new ProvaDAL();
+            // Act
+            pd.ConsultarPorId(1);
+
+
+            //Assert
+
+
+        }
     }
 }
