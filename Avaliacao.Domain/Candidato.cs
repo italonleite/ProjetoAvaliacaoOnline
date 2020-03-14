@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Avaliacao.Domain
 {
-    class Candidato
+    public class Candidato
     {
         public int IdCandidato { get; set; }
         public string Nome { get; set; }
