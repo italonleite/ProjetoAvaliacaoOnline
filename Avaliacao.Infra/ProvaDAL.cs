@@ -1,5 +1,6 @@
 ﻿using Avaliacao.Domain;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -87,6 +88,34 @@ namespace Avaliacao.Infra.Tests
             }
         }
 
+        public List<Prova> ListarTodos()
+        {
+               
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source=.\\SQLNOVO;Initial Catalog=AvaliaçãoReserveSystem;Integrated Security=SSPI"))
+                {
+                    conn.Open();
+                    string query = "select * from Prova";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    var resultado = cmd.ExecuteReader();
+                    List<Prova> lista = new List<Prova>();
+                    while(resultado.Read())
+                    {
+                        Prova p = new Prova((int)resultado["idProva"], (string)resultado["Titulo"]);
+                        lista.Add(p);
+
+                    }
+                    return lista;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 
