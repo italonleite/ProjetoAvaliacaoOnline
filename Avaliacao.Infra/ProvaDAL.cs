@@ -58,6 +58,36 @@ namespace Avaliacao.Infra.Tests
                 throw new Exception(ex.Message);
             }
         }
+        
+        public Prova ConsultarPorId(int IdProva)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection("Data Source=.\\SQLNOVO;Initial Catalog=AvaliaçãoReserveSystem;Integrated Security=SSPI"))
+                {
+                    conn.Open();
+                    string query = "select * from Prova" + " where IDPROVA = @IDPROVA";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@IDPROVA", IdProva);
+                    var resultado = cmd.ExecuteReader();
+                    Prova p = null;
+                    if (resultado.Read())
+                    {
+                        p = new Prova((int)resultado["idProva"], (string)resultado["Titulo"]);
+                  
+                    }
+
+                    return p;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+
     }
 
 }
