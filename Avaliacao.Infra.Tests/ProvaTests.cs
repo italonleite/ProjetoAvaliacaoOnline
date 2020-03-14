@@ -1,10 +1,11 @@
 using Avaliacao.Domain;
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Avaliacao.Infra.Tests
 {
-    public class ProvadDALTests
+    public class ProvaTests
     {
 
         [Fact(DisplayName = "Cadastrar Prova")]
@@ -45,6 +46,19 @@ namespace Avaliacao.Infra.Tests
             var pd = new ProvaDAL();
             // Act
             pd.ConsultarPorId(1);
+
+
+            //Assert
+
+
+        }
+        [Fact(DisplayName = "Lista todas provas")]
+        public void BuscarTodos()
+        {
+            // Arrange
+            var pd = new ProvaDAL();
+            // Act
+            pd.ListarTodos();
 
 
             //Assert
