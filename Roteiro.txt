@@ -1,0 +1,22 @@
+Desenvolvimento do Dominio de Avaliação
+
+/* CANDIDATO - PROVA - QUESTAO */
+
+Um usuário ADMINISTRADOR fará o cadastro da PROVA no sistema:
+
+1 - Criar Prova
+	1.1 - deverá adicionar um Nome para a prova e clicar em salvar.
+	
+2- Adicionar Questão
+	2.1 - Serão adicionadas N questões para a prova, cada questão contém: titulo, pontuação e o tipo da questão.
+	2.2 - O TIPO da questão poderá ser: BOOLEANO ou DISCURSIVA.
+	
+3- Adicionar Alternativa
+	3.1 - Se o tipo da questão for BOOLEANO, havera dois campos para inserir como opções e um checkbox para selecionar a opção correta.
+	3.2 - Se o tipo da questão for DISCURSIVA, não haverá opção para ser preenchida.
+
+4- Gerar Prova
+	4.1 - serão selecionadas uma lista de questões para gerar a prova para o respectivo candidato
+	
+5- Candidato
+	5.1 - O candidato responderá cada questão
