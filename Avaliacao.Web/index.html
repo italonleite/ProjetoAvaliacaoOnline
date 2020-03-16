@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+    <h1 v-if="status">Cadastrar Prova</h1>
+    <div>
+        <p>Prova <input type="text"  v-model="titulo"></input>
+           
+        <button v-on:click="" >Salvar</button>
+      
+    </div>  
+    <div id="bloco-questao" v-if="titulo.length > 3"> 
+    <button>Adicionar Questão</button>
+    
+    <p>Titulo Questão <input type="text" v-model="enunciado"></input></p>
+  
+    <p>Pontuação <input type="number" v-model="pontuacao"></input></p>
+    <p>Tipo <select v-model="tipo" name="tipo" id="tipo">
+         
+        <option value="Booleano">Booleano</option>
+        <option value="Discursiva">Discursiva</option>
+        </select>
+    </div>
+    <div id="bloco-discursiva" v-if="tipo == 'Booleano'">
+    Opção 1 <input type="text" v-model="opcao1"></input>
+    <input type="checkbox" value="xyz">Correta
+    <br>
+    Opção 2 <input type="text" v-model="opcao2"></input>
+    <input type="checkbox" value="xyzsda">Correta</p>
+    </div>  
+        Prova Titulo: {{titulo  | toUpperCase}}<br>
+        Questão Enunciado: {{enunciado}}<br>
+        Questão Pontuação: {{pontuacao}}<br>
+        Questão Tipo: {{tipo}}<br>
+        Questão Opção1: {{opcao1}}<br>
+        Questão Opção2: {{opcao2}}    
+    </div>  
+</div>
+
+</body>
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+       titulo: "",
+       enunciado: "",
+       pontuacao: "",
+       tipo: "",
+       opcao1: "",
+       opcao2: "",
+    },
+
+    filters:{
+        toUpperCase(str){
+            return str.toUpperCase();
+        }
+    },
+    methods: {
+       
+     },
+
+    
+  })
+</script>
+</html>
